@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Ringer Scrape</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/saved">Saved Articles</a>
+      <a class="btn btn-outline-success my-2 my-sm-0 scrape-new">Scrape</a>
+      
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="display-4">Ringer Scrape</h1>
+
+  <hr class="my-4">
+  <h2>The Best in Pop-Culture</h2>
+  <a class="btn btn-primary btn-lg" href="http://www.theringer.com/" role="button">Learn more</a>
+</div>
+
+<div class="articles-container">
+  {{#each article}}
+  <div data_id="{{this._id}}" class="card">
+    <div class="card-header">
+      <h3>
+        <a class="article-link" target="_blank" rel="noopener noreferrer" href="{{this.url}}">{{this.title}}</a>
+        <a class="btn btn-success save">Save Article</a>
+      </h3>
+    </div>
+    <div class="card-body">{{this.summary}}</div>
+  </div>
+  {{/each}}
+   {{!-- {{#unless articles.length}} --}}
+
+</div>
+
+<footer>
+
+</footer>
+<script src="/assets/javascript/index.js"></script>
